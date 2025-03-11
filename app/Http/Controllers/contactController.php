@@ -1,15 +1,15 @@
 <?php
-    namespace App\Http\Controllers;
-    use Illuminate\Http\Requests;
-    use Illuminate\Models\welcome;
 
+namespace App\Http\Controllers;
 
-    class contactController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Welcome;
+
+class ContactController extends Controller
 {
-    public function welcome(){
-        $welcome = new welcome;
+    public function welcome() {
+        $welcome = new Welcome;
         $message = $welcome -> messageWelcome();
-        return view('welcome','message'->$message);
+        return view('welcome', ['message' => $message]);
     }
 }
-
